@@ -3,85 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WaveX Dashboard</title>
+  <title>WaveX Pro</title>
 
-  <!-- Telegram SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app">
+<div class="app">
 
-    <header class="top">
-      <h2 id="username">Welcome</h2>
-      <p class="uid" id="userid"></p>
-    </header>
+  <header>
+    <h2 id="username">Dashboard</h2>
+    <p id="userid"></p>
+  </header>
 
-    <section class="card">
-      <h3>Total Balance</h3>
-      <p class="balance">$12,540.00</p>
-      <button class="btn primary">Add Funds</button>
-    </section>
+  <section class="card">
+    <h3>Simulated Balance</h3>
+    <p class="balance" id="balance">$10,000.00</p>
+    <small class="note">Demo balance (not real)</small>
+  </section>
 
-    <section class="actions">
-      <button class="btn">📈 Invest</button>
-      <button class="btn">📊 Statistics</button>
-      <button class="btn">💼 Portfolio</button>
-      <button class="btn danger">Withdraw</button>
-    </section>
+  <canvas id="chart"></canvas>
 
-    <section class="info">
-      <h4>Account Status</h4>
-      <p class="active">✔ Active & Verified</p>
-    </section>
+  <section class="actions">
+    <button class="btn">🔗 Connect Wallet</button>
+    <button class="btn">📈 Start Simulation</button>
+    <button class="btn danger">🛠 Admin Panel</button>
+  </section>
 
-  </div>
+  <section id="admin" class="admin hidden">
+    <h4>Admin Controls</h4>
+    <button class="btn small">Reset Balance</button>
+    <button class="btn small">Boost Growth</button>
+  </section>
 
-  <script src="app.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WaveX Dashboard</title>
+</div>
 
-  <!-- Telegram SDK -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <div class="app">
-
-    <header class="top">
-      <h2 id="username">Welcome</h2>
-      <p class="uid" id="userid"></p>
-    </header>
-
-    <section class="card">
-      <h3>Total Balance</h3>
-      <p class="balance">$12,540.00</p>
-      <button class="btn primary">Add Funds</button>
-    </section>
-
-    <section class="actions">
-      <button class="btn">📈 Invest</button>
-      <button class="btn">📊 Statistics</button>
-      <button class="btn">💼 Portfolio</button>
-      <button class="btn danger">Withdraw</button>
-    </section>
-
-    <section class="info">
-      <h4>Account Status</h4>
-      <p class="active">✔ Active & Verified</p>
-    </section>
-
-  </div>
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
