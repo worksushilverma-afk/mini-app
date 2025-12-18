@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+.app {
+  padding: 16px;
+}
+
+.top {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.uid {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.balance {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  background: #1abc9c;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: #f39c12;
+}
+
+.btn.danger {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.info {
+  background: rgba(255,255,255,0.06);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.active {
+  color: #2ecc71;
+}
