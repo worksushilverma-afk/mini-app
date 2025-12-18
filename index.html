@@ -1,43 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Telegram Mini App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaveX Dashboard</title>
+
+  <!-- Telegram SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
-    button {
-      padding: 15px 25px;
-      font-size: 18px;
-      border-radius: 10px;
-      border: none;
-      background: #22c55e;
-      color: black;
-      margin-top: 20px;
-    }
-  </style>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>🚀 Telegram Mini App</h2>
-<p>Welcome, grand godfather</p>
+  <div class="app">
 
-<button onclick="sendData()">Click Me</button>
+    <header class="top">
+      <h2 id="username">Welcome</h2>
+      <p class="uid" id="userid"></p>
+    </header>
 
-<script>
-  let tg = window.Telegram.WebApp;
-  tg.expand();
+    <section class="card">
+      <h3>Total Balance</h3>
+      <p class="balance">$12,540.00</p>
+      <button class="btn primary">Add Funds</button>
+    </section>
 
-  function sendData() {
-    tg.sendData("Button clicked");
-  }
-</script>
+    <section class="actions">
+      <button class="btn">📈 Invest</button>
+      <button class="btn">📊 Statistics</button>
+      <button class="btn">💼 Portfolio</button>
+      <button class="btn danger">Withdraw</button>
+    </section>
 
+    <section class="info">
+      <h4>Account Status</h4>
+      <p class="active">✔ Active & Verified</p>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaveX Dashboard</title>
+
+  <!-- Telegram SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="top">
+      <h2 id="username">Welcome</h2>
+      <p class="uid" id="userid"></p>
+    </header>
+
+    <section class="card">
+      <h3>Total Balance</h3>
+      <p class="balance">$12,540.00</p>
+      <button class="btn primary">Add Funds</button>
+    </section>
+
+    <section class="actions">
+      <button class="btn">📈 Invest</button>
+      <button class="btn">📊 Statistics</button>
+      <button class="btn">💼 Portfolio</button>
+      <button class="btn danger">Withdraw</button>
+    </section>
+
+    <section class="info">
+      <h4>Account Status</h4>
+      <p class="active">✔ Active & Verified</p>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
