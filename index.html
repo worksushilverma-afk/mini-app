@@ -1,46 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WaveX Pro</title>
+<meta charset="UTF-8">
+<title>Buy Celebrity Access</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <link rel="stylesheet" href="style.css">
+<style>
+body {
+    margin: 0;
+    background: #0b1220;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: #111827;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.wallet {
+    background: #000;
+    padding: 12px;
+    border-radius: 8px;
+    word-break: break-all;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    background: #22c55e;
+    color: black;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: #2563eb;
+    color: white;
+}
+
+.note {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+</style>
 </head>
+
 <body>
+<div class="container">
+  <div class="card">
 
-<div class="app">
+    <h2>🌟 Popular Person Access</h2>
+    <p>Chat & exclusive content</p>
 
-  <header>
-    <h2 id="username">Dashboard</h2>
-    <p id="userid"></p>
-  </header>
+    <p><b>Price:</b> 20 USDT</p>
+    <p><b>Network:</b> TRC20</p>
 
-  <section class="card">
-    <h3>Simulated Balance</h3>
-    <p class="balance" id="balance">$10,000.00</p>
-    <small class="note">Demo balance (not real)</small>
-  </section>
+    <p><b>Send to SafePal Wallet:</b></p>
+    <div class="wallet" id="wallet">
+      0xSAFEPALEXAMPLE123456789
+    </div>
 
-  <canvas id="chart"></canvas>
+    <button onclick="copyWallet()">📋 Copy Wallet</button>
 
-  <section class="actions">
-    <button class="btn">🔗 Connect Wallet</button>
-    <button class="btn">📈 Start Simulation</button>
-    <button class="btn danger">🛠 Admin Panel</button>
-  </section>
+    <button class="secondary" onclick="paid()">✅ I Have Paid</button>
 
-  <section id="admin" class="admin hidden">
-    <h4>Admin Controls</h4>
-    <button class="btn small">Reset Balance</button>
-    <button class="btn small">Boost Growth</button>
-  </section>
+    <p class="note">
+      Payment will be verified manually.<br>
+      Do not close Telegram before confirmation.
+    </p>
 
+  </div>
 </div>
 
-<script src="app.js"></script>
+<script>
+const tg = window.Telegram.WebApp;
+tg.expand();
+
+function copyWallet() {
+    navigator.clipboard.writeText(
+        document.getElementById("wallet").innerText
+    );
+    tg.showAlert("Wallet address copied!");
+}
+
+function paid() {
+    tg.sendData(JSON.stringify({
+        status: "paid",
+        user: tg.initDataUnsafe.user
+    }));
+    tg.showAlert("Payment info sent. Please wait.");
+    tg.close();
+}
+</script>
 </body>
 </html>
